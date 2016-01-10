@@ -17,4 +17,10 @@ router.get('/new', function(req, res) {
     });
 });
 
+router.get('/modules', function(req, res) {
+    res.render('modules/general/index', {
+    	title: 'New modules folder'
+    });
+});
+
 module.exports = router;
