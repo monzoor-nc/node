@@ -1,3 +1,5 @@
+var api = require('../api');
+
 var express = require('express');
 var router = express.Router();
 
@@ -24,10 +26,17 @@ router.get('/modules', function (req, res) {
 });
 
 router.get('/search', function (req, res){
-	res.render ('modules/search/search', {
-		title: 'Search',
-		layout: 'layouts/layout_new'
-	});
+  //call the api apiGet and create callback function
+  api.apiGet(function (data) {
+    console.log(data);
+    // render to the index.jade and pass the data from api call
+    res.render('modules/search/search', { 
+      
+      title: 'Search',
+      layout: false,
+      result: data
+    });
+  });
 });
 
 module.exports = router;

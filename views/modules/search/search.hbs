@@ -1,6 +1,14 @@
 
 <div class="center-block">
 	<h1>{{title}}</h1>
+	{{!-- <h1>{{result.title}}</h1> --}}
+
+	{{#each result}}
+		<h1>{{author}}</h1>
+		<hr>
+
+	{{/each}}
+
 	<form action="" id="search" class="col-md-4">
 		<input type="text" class="form-control"><br>
 		<button class="pull-right btn btn-primary">Search</button>
